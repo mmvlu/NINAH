@@ -1,0 +1,139 @@
+.archive-container {
+    transform: scale(1.1);
+    transform-origin: top center; /* Масштабируем от центра сверху, чтобы не уехало вниз */
+    margin-top: 50px; /* Добавляем отступ сверху, так как масштаб может "съесть" свободное место */
+}
+
+.history-page {
+    background: #121212;
+    color: #eee;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.archive-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Сетка дней */
+.days-grid {
+    display: grid;
+    /* auto-fill создаст столько колонок по 100px, сколько влезет в ширину окна */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center; /* Центрируем карточки, если их мало в ряду */
+}
+
+.day-card {
+    background: #1e1e1e;
+    border: 2px solid #333;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    
+    /* Магия выравнивания */
+    display: flex;
+    flex-direction: column; /* Элементы идут сверху вниз */
+    align-items: center;    /* Центрируем по горизонтали */
+    gap: 8px;               /* Фиксированный отступ между текстом и картинкой */
+}
+
+.day-card:hover {
+    border-color: #ffffff;
+}
+
+.day-card.active {
+    border-color: #ffffff;
+    background: #2a2a2a;
+}
+
+.day-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.day-card span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Блок описания */
+.day-details {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.inline-item {
+    display: inline-flex;  /* Выстраивает иконку и текст в ряд */
+    align-items: center;   /* Ровняет их по центру друг друга */
+    white-space: nowrap;   /* ЗАПРЕЩАЕТ разрывать строку между ними */
+    gap: 5px;              /* Отступ между иконкой и словом */
+}
+
+.desc-img {
+    /* Убедись, что у иконки нет лишних отступов, которые выталкивают текст */
+    margin: 0; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.day-details h2 { margin-top: 0; color: #ffffff; }
+
+/* Делаем так, чтобы внутри описания всё шло в строку */
+.day-details p {
+    display: flex;
+    flex-wrap: wrap;       /* Если объектов станет слишком много, они перейдут на новую строку сами */
+    align-items: center;   /* Выравнивание по центру (по вертикали) */
+    gap: 15px;             /* Расстояние между иконкой и текстом */
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Чтобы кнопка всегда была поверх всего */
+    
+    background: rgba(255, 69, 0, 0.1); /* Прозрачный оранжевый */
+    color: #ff4500;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ff4500;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    backdrop-filter: blur(5px); /* Размытие фона под кнопкой */
+}
+
+.back:visited {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    
+    background: rgba(255, 255, 255, 0.05); /* Почти прозрачный белый */
+    color: #ffffff !important; /* Форсируем белый цвет текста */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ffffff; /* Белая рамка */
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Состояние при наведении */
+.back:hover {
+    background: #ffffff;
+    color: #000000 !important; /* Текст станет черным на белом фоне */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}

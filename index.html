@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No, I'm not a human | Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-page">
+
+    <aside id="sidebar">
+        <button id="toggle-sidebar" class="toggle-sidebar-btn">
+            <span class="arrow-icon">&lt;</span>
+        </button>
+
+        <div class="sidebar-content">
+            <h2 id="preview-name">Выберите объект</h2>
+            <div class="preview-frame">
+                <img id="preview-img" src="" alt="">
+            </div>
+            <p id="preview-desc">Наведите на иконку, чтобы увидеть базовое фото и описание.</p>
+        </div>
+    </aside>
+
+    <main id="main-content">
+	
+        <div class="search-wrapper">
+            <div class="search-box">
+                <input type="text" id="char-search" placeholder="ВВЕДИТЕ ИМЯ ОБЪЕКТА..." autocomplete="off">
+                <div class="search-line"></div>
+            </div>
+        </div>
+
+        <section class="category">
+            <h2>Человек</h2>
+            <div class="grid" id="category-human"></div>
+        </section>
+
+        <section class="category">
+            <h2>Гость</h2>
+            <div class="grid" id="category-guest"></div>
+        </section>
+
+        <section class="category">
+            <h2>Рандом</h2>
+            <div class="grid" id="category-random"></div>
+        </section>
+
+        <section class="category">
+            <h2>Сюжетный персонаж</h2>
+            <div class="grid" id="category-story"></div>
+        </section>
+
+        <section class="category">
+            <h2>Предметы</h2>
+            <div class="grid" id="category-item"></div>
+        </section>
+
+<a href="calendar.html" class="calendar-icon-btn">
+        <img src="assets/calendar/calendar-base.png" alt="Календарь">
+    </a>
+
+<button class="info-btn" onclick="openInfoModal()">i</button>
+
+<div id="info-modal" class="modal-overlay" onclick="closeInfoModal(event)">
+    <div class="modal-content info-modal-box" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeInfoModal()">&times;</span>
+        <h2 style="color: #ffffff; letter-spacing: 2px;">ИНФОРМАЦИЯ</h2>
+        <div class="info-scroll-text">
+            <p>По вопросам/предложениям/помощи можно писать: <br> Email: slendermanoriginal@yandex.ru <br> tg:  @marlboroenjoyerr <br><br>Использованные источники: <br> https://clck.ru/3RjL8R <br> https://clck.ru/3RjL9M</p>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 15px 0;">
+            <p style="font-size: 14px; color: #888;">by alotofeyes</p>
+        </div>
+    </div>
+</div>
+
+    <div class="search-wrapper">
+    </main>
+
+    <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-body">
+                <div class="modal-image-main">
+                    <img id="modal-img" src="" alt="Character">
+                </div>
+                
+                <div class="modal-info">
+                    <h2 id="modal-name">Имя</h2>
+                    
+                    <div id="switcher-container" class="toggle-group">
+                        <button id="btn-h" class="toggle-btn" onclick="switchMode('human')">Человек</button>
+                        <button id="btn-g" class="toggle-btn" onclick="switchMode('guest')">Гость</button>
+                    </div>
+
+                    <div class="features-section">
+                        <h3>Признаки:</h3>
+                        <div id="feature-container" class="feature-grid"></div>
+                    </div>
+
+                    <div class="description-box">
+                        <h3>Информация:</h3>
+                        <p id="modal-info-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-preview-popup" class="preview-popup"></div>
+
+    <script src="data-humans.js"></script>
+    <script src="data-guests.js"></script>
+    <script src="data-random.js"></script>
+    <script src="data-story.js"></script>
+    <script src="data-item.js"></script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
