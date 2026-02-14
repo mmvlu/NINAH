@@ -77,7 +77,7 @@ const itemData = [
         icon: "assets/items/coffee/coffee_icon.png",
         // Данные для режима "Человек"
         humanData: {
-            main: "assets/items/coffee/coffee.png",
+            main: "assets/items/coffee/Coffee.png",
             features: [
                 { name: "Эффект кофе", img: "assets/items/enerjeka/effect.gif" }
             ]       
