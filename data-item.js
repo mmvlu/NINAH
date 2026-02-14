@@ -123,10 +123,10 @@ const itemData = [
         name: "Cat food", 
         name_ru: "Кошачья еда", 
         type: "item", 
-        icon: "assets/items/Cat_Food/Cat_Food.png",
+        icon: "assets/items/cat_food/Cat_Food.png",
         // Данные для режима "Человек"
         humanData: {
-            main: "assets/items/Cat_Food/cat_feeding.gif",        },
+            main: "assets/items/cat_food/cat_feeding.gif",        },
 
         desc: "При кормлении кошки в следующую ночь никто не умрет. Можно заказать в ForRest сразу 2 консервы.<br><br>Может быть дан в качестве взятки." 
     },
