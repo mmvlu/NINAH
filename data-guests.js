@@ -118,20 +118,20 @@ const guestsData = [
         icon: "assets/guest/Immortal_man/Immortal_man_icon.png",
         // Данные для режима "Человек"
         humanData: {
-            main: "assets/guest/Immortal_man/Immortal_man_height.png",
+            main: "assets/guest/Immortal_Man/Immortal_man_height.png",
             features: [
-                { name: "Подмышки", img: "assets/guest/Immortal_man/Immortal_man_armpits.png" },
-		{ name: "Уши", img: "assets/guest/Immortal_man/Immortal_man_ears.png" },
-		{ name: "Фото", img: "assets/guest/Immortal_man/Immortal_man_photo.png" }
+                { name: "Подмышки", img: "assets/guest/Immortal_Man/Immortal_man_armpits.png" },
+		{ name: "Уши", img: "assets/guest/Immortal_Man/Immortal_man_ears.png" },
+		{ name: "Фото", img: "assets/guest/Immortal_Man/Immortal_man_photo.png" }
             ]
         },
         // Данные для режима "Гость"
         guestData: {
-            main: "assets/guest/Immortal_man/Immortal_man_height.png",
+            main: "assets/guest/Immortal_Man/Immortal_man_height.png",
             features: [
-                { name: "Подмышки", img: "assets/guest/Immortal_man/Immortal_man_armpits.png" },
-		{ name: "Уши", img: "assets/guest/Immortal_man/Immortal_man_ears.png" },
-		{ name: "Фото", img: "assets/guest/Immortal_man/Immortal_man_photo.png" }
+                { name: "Подмышки", img: "assets/guest/Immortal_Man/Immortal_man_armpits.png" },
+		{ name: "Уши", img: "assets/guest/Immortal_Man/Immortal_man_ears.png" },
+		{ name: "Фото", img: "assets/guest/Immortal_Man/Immortal_man_photo.png" }
             ]
         },
 
