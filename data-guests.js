@@ -115,10 +115,10 @@ const guestsData = [
         name: "Immortal man", 
         name_ru: "Бессмертный", 
         type: "guest", 
-        icon: "assets/guest/Immortal_man/Immortal_man_icon.png",
+        icon: "assets/guest/Immortal_man/Immortal_Man_icon.png",
         // Данные для режима "Человек"
         humanData: {
-            main: "assets/guest/Immortal_Man/Immortal_man_height.png",
+            main: "assets/guest/Immortal_Man/Immortal_Man_height.png",
             features: [
                 { name: "Подмышки", img: "assets/guest/Immortal_Man/Immortal_man_armpits.png" },
 		{ name: "Уши", img: "assets/guest/Immortal_Man/Immortal_man_ears.png" },
@@ -127,7 +127,7 @@ const guestsData = [
         },
         // Данные для режима "Гость"
         guestData: {
-            main: "assets/guest/Immortal_Man/Immortal_man_height.png",
+            main: "assets/guest/Immortal_Man/Immortal_Man_height.png",
             features: [
                 { name: "Подмышки", img: "assets/guest/Immortal_Man/Immortal_man_armpits.png" },
 		{ name: "Уши", img: "assets/guest/Immortal_Man/Immortal_man_ears.png" },
