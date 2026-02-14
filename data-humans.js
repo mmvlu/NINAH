@@ -264,7 +264,7 @@ const humansData = [
     name: "Widowed Woman",
     name_ru: "Вдова", 
     type: "human", // <--- Просто меняете это слово
-    icon: "assets/human/Widowed_Woman/Widowed_Woman_Icon.png",
+    icon: "assets/human/Widowed_Woman/Widowed_Woman_icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
         humanData: {
             main: "assets/human/Widowed_Woman/Widowed_Woman_height.png",
