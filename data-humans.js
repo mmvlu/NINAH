@@ -2,6 +2,7 @@ const humansData = [
     {
     id: "h1", 
     name: "Bar Guy", 
+    name_ru: "Мужик из паба", 
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Bar_Guy/bar_guy_icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -26,7 +27,8 @@ const humansData = [
 
         {
     id: "h2", 
-    name: "Blinded Man", 
+    name: "Blinded Man",
+    name_ru: "Слепой",  
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Blinded_Man/Blind_Man_Icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -51,7 +53,8 @@ const humansData = [
 
             {
             id: "h3", 
-    name: "Death Cult Peon 1", 
+    name: "Death Cult Peon 1",
+    name_ru: "Культист 1",  
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Death_Cult_Peon_1/Peon1icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -77,6 +80,7 @@ const humansData = [
             {
             id: "h4", 
     name: "Death Cult Peon 2", 
+    name_ru: "Культист 2",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Death_Cult_Peon_2/Peon2icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -102,6 +106,7 @@ const humansData = [
             {
             id: "h5", 
     name: "Death Cult Peon 3", 
+    name_ru: "Культист 3",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Death_Cult_Peon_3/Peon3icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -127,6 +132,7 @@ const humansData = [
 	            {
             id: "h6", 
     name: "Disfigured Firefighter", 
+    name_ru: "Пожарный",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Disfigured Firefighter/DisfiguredFirefighterIcon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -152,6 +158,7 @@ const humansData = [
 		            {
             id: "h7", 
     name: "Man in Hazmat", 
+    name_ru: "Мужик в химзащите",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Man_in_Hazmat/Man_in_Hazmat_icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -177,6 +184,7 @@ const humansData = [
 		{
             id: "h8", 
     name: "Kindergarten Teacher", 
+    name_ru: "Воспитательница",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Kindergarten_Teacher/Kindergarten_Teacher_icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -202,6 +210,7 @@ const humansData = [
 		{
             id: "h9", 
     name: "Little Girl", 
+    name_ru: "Дочь соседа",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Little_Girl/Little_Girl_icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -227,6 +236,7 @@ const humansData = [
 		{
             id: "h10", 
     name: "Wireface", 
+    name_ru: "Зашитыш",
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Wireface/Wireface_Icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал
@@ -251,7 +261,8 @@ const humansData = [
 
 		{
             id: "h11", 
-    name: "Widowed Woman", 
+    name: "Widowed Woman",
+    name_ru: "Вдова", 
     type: "human", // <--- Просто меняете это слово
     icon: "assets/human/Widowed_Woman/Widowed_Woman_Icon.png",
     // Даже если это человек, структура должна быть, чтобы скрипт не падал

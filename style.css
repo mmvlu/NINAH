@@ -328,11 +328,12 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    margin-top: 20px; /* Добавь немного места сверху, если нужно */
 }
 
 .search-box {
     width: 350px;
-    position: relative;
+    position: relative; /* Это база для кнопок */
 }
 
 #char-search {
@@ -417,4 +418,46 @@ html, body {
     font-size: 16px;
     line-height: 1.5;
     color: #ddd;
+}
+
+/* Кнопки теперь привязаны к левому краю search-box */
+.language-switch {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    right: calc(100% + 20px); /* 100% (вся ширина поиска) + 20px отступа */
+    top: 50%;
+    transform: translateY(-50%); /* Центровка по вертикали относительно инпута */
+    white-space: nowrap; /* Чтобы кнопки не прыгали на новую строку */
+}
+
+/* Твои любимые стили кнопок без изменений */
+.lang-btn {
+    background: #111;
+    border: 1px solid #333;
+    color: #555;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    border-color: #ffffff;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Поправил на белый под твой стиль */
+}
+
+#char-search {
+    width: 100%;
+    background: rgba(30, 30, 30, 0.7);
+    border: 1px solid #444;
+    border-bottom: 2px solid #FFFFFF;
+    padding: 12px;
+    color: #FFFFFF;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    outline: none;
+    letter-spacing: 1px;
+    box-sizing: border-box; /* Чтобы паддинги не раздували инпут */
 }

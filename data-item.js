@@ -2,6 +2,7 @@ const itemData = [
     {
         id: "i1", 
         name: "FEMA Notice Slip", 
+        name_ru: "Явка КЧС", 
         type: "item", 
         icon: "assets/items/notice/notice.gif",
         // Данные для режима "Человек"
@@ -17,7 +18,8 @@ const itemData = [
 
     {
         id: "i2", 
-        name: "Mushroom", 
+        name: "Mushroom",
+        name_ru: "Гриб",  
         type: "item", 
         icon: "assets/items/mushroom/Mushroom_heigth.png",
         // Данные для режима "Человек"
@@ -34,6 +36,7 @@ const itemData = [
     {
         id: "i3", 
         name: "EnerJeka", 
+        name_ru: "ЕнерЖека", 
         type: "item", 
         icon: "assets/items/enerjeka/enerjeka_heigth1.png",
         // Данные для режима "Человек"
@@ -51,6 +54,7 @@ const itemData = [
     {
         id: "i4", 
         name: "Cigarettes", 
+        name_ru: "Сигареты", 
         type: "item", 
         icon: "assets/items/cigarettes/Cigarettes.png",
         // Данные для режима "Человек"
@@ -68,6 +72,7 @@ const itemData = [
     {
         id: "i5", 
         name: "Coffee", 
+        name_ru: "Кофе", 
         type: "item", 
         icon: "assets/items/coffee/coffee_icon.png",
         // Данные для режима "Человек"
@@ -84,6 +89,7 @@ const itemData = [
     {
         id: "i6", 
         name: "Kombucha", 
+        name_ru: "Чайный гриб", 
         type: "item", 
         icon: "assets/items/kombucha/kombucha_icon.png",
         // Данные для режима "Человек"
@@ -96,6 +102,7 @@ const itemData = [
     {
         id: "i7", 
         name: "Beer", 
+        name_ru: "Пиво", 
         type: "item", 
         icon: "assets/items/beer/beer_main1.png",
         // Данные для режима "Человек"
@@ -114,6 +121,7 @@ const itemData = [
     {
         id: "i8", 
         name: "Cat food", 
+        name_ru: "Кошачья еда", 
         type: "item", 
         icon: "assets/items/Cat_Food/Cat_Food.png",
         // Данные для режима "Человек"

@@ -2,6 +2,7 @@ const randomData = [
     {
        id: "r1", 
         name: "Seductive Woman", 
+        name_ru: "Соблазнительница", 
         type: "random", 
         icon: "assets/random/Seductive_Woman/SeductiveWomanIcon.png",
         // Данные для режима "Человек"
@@ -29,6 +30,7 @@ const randomData = [
     {
        id: "r2", 
         name: "Amogus Guy", 
+        name_ru: "Амогус", 
         type: "random", 
         icon: "assets/random/Amogus_Guy/AmogusGuyIcon.png",
         // Данные для режима "Человек"
@@ -58,6 +60,7 @@ const randomData = [
     {
        id: "r3", 
         name: "Angry Guy", 
+        name_ru: "Злой мужик", 
         type: "random", 
         icon: "assets/random/Angry_Guy/AngryGuyIcon.png",
         // Данные для режима "Человек"
@@ -85,6 +88,7 @@ const randomData = [
     {
        id: "r4", 
         name: "Armchair Lawyer Guy", 
+        name_ru: "Арендатор", 
         type: "random", 
         icon: "assets/random/Armchair_Lawyer_Guy/LawyerGuy_icon.png",
         // Данные для режима "Человек"
@@ -108,6 +112,7 @@ const randomData = [
     {
        id: "r5", 
         name: "Bandana Guy", 
+        name_ru: "Бандана", 
         type: "random", 
         icon: "assets/random/Bandana_Guy/BandanaGuy_Icon.png",
         // Данные для режима "Человек"
@@ -136,7 +141,8 @@ const randomData = [
 
     {
        id: "r6", 
-        name: "Arsen Markaryan", 
+        name: "Arsen Markaryan",
+        name_ru: "Бородатый охотник",  
         type: "random", 
         icon: "assets/random/Bearded_Huntsman/BeardedGuy_ico.png",
         // Данные для режима "Человек"
@@ -161,6 +167,7 @@ const randomData = [
     {
        id: "r7", 
         name: "Best Son", 
+        name_ru: "Лучший сын", 
         type: "random", 
         icon: "assets/random/Best_Son/BestSon_Icon.png",
         // Данные для режима "Человек"
@@ -190,6 +197,7 @@ const randomData = [
     {
        id: "r8", 
         name: "FEMA Wife", 
+        name_ru: "Жена агента КЧС", 
         type: "random", 
         icon: "assets/random/FEMA_Wife/cunt_Icon.png",
         // Данные для режима "Человек"
@@ -217,6 +225,7 @@ const randomData = [
     {
        id: "r9", 
         name: "College Runaway", 
+        name_ru: "Беглец с шараги", 
         type: "random", 
         icon: "assets/random/College_Runaway/Collegerunaway_icon.png",
         // Данные для режима "Человек"
@@ -242,6 +251,7 @@ const randomData = [
     {
        id: "r10", 
         name: "Conspiracy Theorist", 
+        name_ru: "Конспиролог", 
         type: "random", 
         icon: "assets/random/Conspiracy_Theorist/Theorist_Icon.png",
         // Данные для режима "Человек"
@@ -269,6 +279,7 @@ const randomData = [
     {
        id: "r11", 
         name: "Cheerful Man", 
+        name_ru: "Доброжелательный мужик", 
         type: "random", 
         icon: "assets/random/Cheerful_Man/CheerfulMan_Icon.png",
         // Данные для режима "Человек"
@@ -294,6 +305,7 @@ const randomData = [
     {
        id: "r12", 
         name: "Creepy Guy", 
+        name_ru: "Криповый парень", 
         type: "random", 
         icon: "assets/random/Creepy_Guy/Creepyguy_icon.png",
         // Данные для режима "Человек"
@@ -321,6 +333,7 @@ const randomData = [
     {
        id: "r13", 
         name: "Deadbeat Mom", 
+        name_ru: "Непутевая мать", 
         type: "random", 
         icon: "assets/random/Deadbeat_Mom/Deadbeat_Mom_Icon.png",
         // Данные для режима "Человек"
@@ -346,6 +359,7 @@ const randomData = [
     {
        id: "r14", 
         name: "Debtor", 
+        name_ru: "Должник", 
         type: "random", 
         icon: "assets/random/Debtor/Debtor_icon.png",
         // Данные для режима "Человек"
@@ -369,6 +383,7 @@ const randomData = [
     {
        id: "r15", 
         name: "EnerJeka Addict", 
+        name_ru: "Зависимый от Энерджеки", 
         type: "random", 
         icon: "assets/random/EnerJeka_Addict/Enerjeka_Addict_icon.png",
         // Данные для режима "Человек"
@@ -398,6 +413,7 @@ const randomData = [
     {
        id: "r16", 
         name: "Ex-Con", 
+        name_ru: "Бывший зек", 
         type: "random", 
         icon: "assets/random/Ex-Con/Ex-Con_icon.png",
         // Данные для режима "Человек"
@@ -421,6 +437,7 @@ const randomData = [
     {
        id: "r17", 
         name: "Ex-Minister", 
+        name_ru: "Бывший министр", 
         type: "random", 
         icon: "assets/random/Ex-Minister/Ex-Minister_icon.png",
         // Данные для режима "Человек"
@@ -444,6 +461,7 @@ const randomData = [
     {
        id: "r18", 
         name: "Fairytale Enjoyer", 
+        name_ru: "Любитель сказок", 
         type: "random", 
         icon: "assets/random/Fairytale_Enjoyer/Fairytale_Enjoyer_icon.png",
         // Данные для режима "Человек"
@@ -473,6 +491,7 @@ const randomData = [
     {
        id: "r19", 
         name: "Fortune Teller", 
+        name_ru: "Гадалка", 
         type: "random", 
         icon: "assets/random/Fortune_Teller/Fortune_Teller_icon.png",
         // Данные для режима "Человек"
@@ -500,6 +519,7 @@ const randomData = [
     {
        id: "r20", 
         name: "Gravedigger", 
+        name_ru: "Могильщик", 
         type: "random", 
         icon: "assets/random/Gravedigger/Gravedigger_icon.png",
         // Данные для режима "Человек"
@@ -523,6 +543,7 @@ const randomData = [
     {
        id: "r21", 
         name: "Homeless Man", 
+        name_ru: "Бездомный", 
         type: "random", 
         icon: "assets/random/Homeless_Man/Homeless_Man_icon.png",
         // Данные для режима "Человек"
@@ -548,6 +569,7 @@ const randomData = [
     {
        id: "r22", 
         name: "Husband and Wife", 
+        name_ru: "Муж с женой", 
         type: "random", 
         icon: "assets/random/HusbandnWife/HusbandnWife_icon.png",
         // Данные для режима "Человек"
@@ -575,6 +597,7 @@ const randomData = [
     {
        id: "r23", 
         name: "Leper Guy", 
+        name_ru: "Прокаженный", 
         type: "random", 
         icon: "assets/random/Leper_Guy/Leper_Guy_icon.png",
         // Данные для режима "Человек"
@@ -604,6 +627,7 @@ const randomData = [
     {
        id: "r24", 
         name: "Morbid Romantic", 
+        name_ru: "Чимин с гангреной", 
         type: "random", 
         icon: "assets/random/Morbid_Romantic/Morbid_Romantic_icon.png",
         // Данные для режима "Человек"
@@ -633,6 +657,7 @@ const randomData = [
     {
        id: "r25", 
         name: "The Nun", 
+        name_ru: "Монашка", 
         type: "random", 
         icon: "assets/random/The_Nun/Nun_icon.png",
         // Данные для режима "Человек"
@@ -658,6 +683,7 @@ const randomData = [
     {
        id: "r26", 
         name: "Parentless Teenager", 
+        name_ru: "Сирота", 
         type: "random", 
         icon: "assets/random/Parentless_Teenager/Parentless_Teenager_icon.png",
         // Данные для режима "Человек"
@@ -683,6 +709,7 @@ const randomData = [
     {
        id: "r27", 
         name: "Punk Girl", 
+        name_ru: "Панк", 
         type: "random", 
         icon: "assets/random/Punk_Girl/PunkGirl_icon.png",
         // Данные для режима "Человек"
@@ -708,6 +735,7 @@ const randomData = [
     {
        id: "r28", 
         name: "Rockstar", 
+        name_ru: "Рокстар", 
         type: "random", 
         icon: "assets/random/Rockstar/Rockstar_icon.png",
         // Данные для режима "Человек"
@@ -731,6 +759,7 @@ const randomData = [
     {
        id: "r29", 
         name: "Sleepless Man", 
+        name_ru: "Бессоный", 
         type: "random", 
         icon: "assets/random/Sleepless_Man/SleeplessMan_icon.png",
         // Данные для режима "Человек"
@@ -758,6 +787,7 @@ const randomData = [
     {
        id: "r30", 
         name: "Stand Up Guy", 
+        name_ru: "Стендапер", 
         type: "random", 
         icon: "assets/random/StandUp_Guy/StandUp_Guy_icon.png",
         // Данные для режима "Человек"
@@ -783,6 +813,7 @@ const randomData = [
     {
        id: "r31", 
         name: "Stoner", 
+        name_ru: "Растаман", 
         type: "random", 
         icon: "assets/random/Stoner/Stoner_icon.png",
         // Данные для режима "Человек"
@@ -810,6 +841,7 @@ const randomData = [
     {
        id: "r32", 
         name: "Suit Guy", 
+        name_ru: "Мужик в костюме", 
         type: "random", 
         icon: "assets/random/SuitGuy/SuitGuy_icon.png",
         // Данные для режима "Человек"
@@ -837,6 +869,7 @@ const randomData = [
     {
        id: "r33", 
         name: "Sun Boy", 
+        name_ru: "Санбой", 
         type: "random", 
         icon: "assets/random/SunBoy/SunBoy_icon.png",
         // Данные для режима "Человек"
@@ -863,7 +896,8 @@ const randomData = [
 
     {
        id: "r34", 
-        name: "Surgeon", 
+        name: "Surgeon",
+        name_ru: "Хирург",  
         type: "random", 
         icon: "assets/random/Surgeon/Surgeon_icon.png",
         // Данные для режима "Человек"
@@ -888,7 +922,8 @@ const randomData = [
 
     {
        id: "r35", 
-        name: "Tattooed Woman", 
+        name: "Tattooed Woman",
+        name_ru: "Татуированная девушка",  
         type: "random", 
         icon: "assets/random/TattooedWoman/TattooedWoman_icon.png",
         // Данные для режима "Человек"
@@ -914,6 +949,7 @@ const randomData = [
     {
        id: "r36", 
         name: "Taxi Driver", 
+        name_ru: "Таксист", 
         type: "random", 
         icon: "assets/random/TaxiDriver/TaxiDriver_icon.png",
         // Данные для режима "Человек"
@@ -943,6 +979,7 @@ const randomData = [
     {
        id: "r37", 
         name: "Theater Guy", 
+        name_ru: "Актер", 
         type: "random", 
         icon: "assets/random/TheaterGuy/TheaterGuy_icon.png",
         // Данные для режима "Человек"
@@ -972,6 +1009,7 @@ const randomData = [
     {
        id: "r38", 
         name: "Twin Smoker", 
+        name_ru: "Курящая блязняшка", 
         type: "random", 
         icon: "assets/random/TwinSmoker/SmokerTwin_icon.png",
         // Данные для режима "Человек"
@@ -999,6 +1037,7 @@ const randomData = [
     {
        id: "r39", 
         name: "Twin Depressed", 
+        name_ru: "Депрессивная близняшка", 
         type: "random", 
         icon: "assets/random/TwinDepressed/TwinDepressed_icon.png",
         // Данные для режима "Человек"
@@ -1030,6 +1069,7 @@ const randomData = [
     {
        id: "r40", 
         name: "Tourist", 
+        name_ru: "Турист", 
         type: "random", 
         icon: "assets/random/Tourist/Tourist_icon.png",
         // Данные для режима "Человек"
@@ -1057,6 +1097,7 @@ const randomData = [
     {
        id: "r41", 
         name: "Wheelchair Guy", 
+        name_ru: "Парень в коляске", 
         type: "random", 
         icon: "assets/random/WheelchairGuy/WheelchairGuy_icon.png",
         // Данные для режима "Человек"
@@ -1086,6 +1127,7 @@ const randomData = [
     {
        id: "r41", 
         name: "Wounded Man", 
+        name_ru: "Раненый", 
         type: "random", 
         icon: "assets/random/WoundedMan/WoundedMan_icon.png",
         // Данные для режима "Человек"

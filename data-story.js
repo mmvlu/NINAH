@@ -2,6 +2,7 @@ const storyData = [
     {
         id: "s1", 
         name: "Neighbor", 
+        name_ru: "Сосед", 
         type: "story", 
         icon: "assets/story/Neighbor/Neighbour_profile.png",
         // Данные для режима "Человек"
@@ -25,6 +26,7 @@ const storyData = [
     {
         id: "s2", 
         name: "Raincoat Child", 
+        name_ru: "Мальчик в дождевике", 
         type: "story", 
         icon: "assets/story/RaincoatChild/RaincoatChild_icon.png",
         // Данные для режима "Человек"
@@ -48,6 +50,7 @@ const storyData = [
     {
         id: "s3", 
         name: "Death Cult Leader", 
+        name_ru: "Главный культист", 
         type: "story", 
         icon: "assets/story/DeathCultLeader/DeathCultLeader_icon.png",
         // Данные для режима "Человек"
@@ -71,6 +74,7 @@ const storyData = [
     {
         id: "s4", 
         name: "Delivery Man", 
+        name_ru: "Доставщик", 
         type: "story", 
         icon: "assets/story/DeliveryMan/DeliveryMan_icon.png",
         // Данные для режима "Человек"
@@ -94,6 +98,7 @@ const storyData = [
     {
         id: "s5", 
         name: "Prophetic Man", 
+        name_ru: "Вещий", 
         type: "story", 
         icon: "assets/story/PropheticMan/PropheticMan_icon.png",
         // Данные для режима "Человек"
@@ -117,6 +122,7 @@ const storyData = [
     {
         id: "s6", 
         name: "FEMA Agent", 
+        name_ru: "Агент КЧС", 
         type: "story", 
         icon: "assets/story/FEMA_Agent/FEMA_Agent_icon.png",
         // Данные для режима "Человек"
@@ -140,6 +146,7 @@ const storyData = [
     {
         id: "s7", 
         name: "Pale Visitor", 
+        name_ru: "Бледный", 
         type: "story", 
         icon: "assets/story/Pale_Visitor/Pale_Visitor_icon.png",
         // Данные для режима "Человек"
@@ -163,6 +170,7 @@ const storyData = [
     {
         id: "s8", 
         name: "Mushroom Eater", 
+        name_ru: "Грибник", 
         type: "story", 
         icon: "assets/story/Mushroom_Eater/Mushroom_Eater_icon.png",
         // Данные для режима "Человек"
@@ -186,6 +194,7 @@ const storyData = [
     {
         id: "s9", 
         name: "Vigilante", 
+        name_ru: "Стрелок", 
         type: "story", 
         icon: "assets/story/Vigilante/Vigilante_icon.png",
         // Данные для режима "Человек"

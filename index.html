@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No, I'm not a human | Database</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="main-page">
@@ -23,13 +25,18 @@
     </aside>
 
     <main id="main-content">
-	
-        <div class="search-wrapper">
-            <div class="search-box">
-                <input type="text" id="char-search" placeholder="ВВЕДИТЕ ИМЯ ОБЪЕКТА..." autocomplete="off">
-                <div class="search-line"></div>
-            </div>
+
+<div class="search-wrapper">
+    <div class="search-box">
+        <div class="language-switch">
+            <button id="lang-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button id="lang-ru" class="lang-btn" onclick="setLanguage('ru')">RU</button>
         </div>
+        
+        <input type="text" id="char-search" placeholder="ВВЕДИТЕ ИМЯ ОБЪЕКТА..." autocomplete="off">
+        <div class="search-line"></div>
+    </div>
+</div>
 
         <section class="category">
             <h2>Человек</h2>
@@ -115,6 +122,7 @@
     <script src="data-random.js"></script>
     <script src="data-story.js"></script>
     <script src="data-item.js"></script>
+    <script src="search_tags.js"></script>
     
     <script src="script.js"></script>
 

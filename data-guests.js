@@ -1,7 +1,8 @@
 const guestsData = [
     {
         id: "g1", 
-        name: "Big Momma", 
+        name: "Big Momma",
+        name_ru: "Большая мама", 
         type: "guest", 
         icon: "assets/guest/Big_Momma/Big_Momma_icon.png",
         // Данные для режима "Человек"
@@ -28,6 +29,7 @@ const guestsData = [
     {
         id: "g2", 
         name: "Cashier Girl", 
+        name_ru: "Кассирша", 
         type: "guest", 
         icon: "assets/guest/Cashier_Girl/Cashier_Girl_icon.png",
         // Данные для режима "Человек"
@@ -55,6 +57,7 @@ const guestsData = [
     {
         id: "g3", 
         name: "Cat Lady", 
+        name_ru: "Балерина", 
         type: "guest", 
         icon: "assets/guest/Cat_Lady/Cat_Lady_icon.png",
         // Данные для режима "Человек"
@@ -82,6 +85,7 @@ const guestsData = [
     {
         id: "g4", 
         name: "Coat Guy", 
+        name_ru: "Парень в куртке", 
         type: "guest", 
         icon: "assets/guest/Coat_Guy/Coat_Guy_icon.png",
         // Данные для режима "Человек"
@@ -109,6 +113,7 @@ const guestsData = [
     {
         id: "g5", 
         name: "Immortal man", 
+        name_ru: "Бессмертный", 
         type: "guest", 
         icon: "assets/guest/Immortal_man/Immortal_man_icon.png",
         // Данные для режима "Человек"
@@ -136,6 +141,7 @@ const guestsData = [
     {
         id: "g6", 
         name: "Babushka", 
+        name_ru: "Бабушка", 
         type: "guest", 
         icon: "assets/guest/Babushka/Babushka_icon.png",
         // Данные для режима "Человек"

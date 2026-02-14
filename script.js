@@ -1,34 +1,36 @@
+// --- ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ---
 const characters = [...humansData, ...guestsData, ...randomData, ...storyData, ...itemData];
+let currentLang = 'en'; 
+let currentCharacter = null;
 
 const previewImg = document.getElementById('preview-img');
 const previewName = document.getElementById('preview-name');
 const previewDesc = document.getElementById('preview-desc');
 const featureContainer = document.getElementById('feature-container');
+const previewPopup = document.getElementById('image-preview-popup');
 
+// --- ИНИЦИАЛИЗАЦИЯ ---
 function init() {
-    // Сортируем персонажей по алфавиту (поле name) перед отрисовкой
-    const sortedCharacters = [...characters].sort((a, b) => {
-        return a.name.localeCompare(b.name);
-    });
+    const sortedCharacters = [...characters].sort((a, b) => a.name.localeCompare(b.name));
 
-// Твой цикл отрисовки карточек
     sortedCharacters.forEach(char => {
         const card = document.createElement('div');
         card.className = 'char-card';
-	card.setAttribute('data-name', char.name); // <--- ВАЖНО для работы поиска
+        
+        // Записываем ID и имена в атрибуты (маленькими буквами для поиска)
+        card.setAttribute('data-id', (char.id || "").toLowerCase()); 
+        card.setAttribute('data-name-en', (char.name || "").toLowerCase());
+        card.setAttribute('data-name-ru', (char.name_ru || char.name || "").toLowerCase());
+
         card.style.backgroundImage = `url('${char.icon}')`;
         
         card.onmouseover = () => {
-            // ШАГ 1: Находим блок контента и добавляем ему класс 'active'
             const content = document.querySelector('.sidebar-content');
-            if (content) {
-                content.classList.add('active');
-            }
-
-            // ШАГ 2: Твой обычный код обновления данных
-            document.getElementById('preview-img').src = char.humanData.main;
-            document.getElementById('preview-name').innerText = char.name;
-            document.getElementById('preview-desc').innerHTML = char.desc;
+            if (content) content.classList.add('active');
+            
+            // Сохраняем, на кого навели, чтобы обновить при смене языка
+            window.lastHoveredChar = char;
+            renderPreview(char);
         };
 
         card.onclick = () => openModal(char);
@@ -38,201 +40,161 @@ function init() {
     });
 }
 
-let currentCharacter = null;
-
-function openModal(char) {
-    currentCharacter = char;
-    document.getElementById('modal').style.display = 'flex';
-    document.getElementById('modal-name').innerText = char.name;
-    document.getElementById('modal-info-text').innerHTML = char.desc;
-
-    const switcher = document.getElementById('switcher-container');
-    
-    if (char.type === 'random') {
-        // Если это Рандом — оставляем кнопки выбора
-        switcher.style.display = 'flex';
-        switcher.innerHTML = `
-            <button id="btn-h" class="toggle-btn" onclick="switchMode('human')">Человек</button>
-            <button id="btn-g" class="toggle-btn" onclick="switchMode('guest')">Гость</button>
-        `;
-        switchMode('human'); 
-    } else if (char.type === 'human') {
-        // Если это 100% Человек — зеленая плашка
-        switcher.style.display = 'flex';
-        switcher.innerHTML = `<div class="status-label status-human">СТАТУС: ЧЕЛОВЕК</div>`;
-        switchMode('human');
-    } else if (char.type === 'guest') {
-        // Если это 100% Гость — красная плашка
-        switcher.style.display = 'flex';
-        switcher.innerHTML = `<div class="status-label status-guest">СТАТУС: ГОСТЬ</div>`;
-        switchMode('guest'); // Сразу включаем режим гостя, чтобы видеть его признаки
-    } else if (char.type === 'story') {
-        switcher.style.display = 'flex';
-        // Можешь сделать свой стиль для сюжетных, например status-story
-        switcher.innerHTML = `<div class="status-label" style="background: #4a90e2; color: white; padding: 5px 15px; border-radius: 4px;">СЮЖЕТНЫЙ ПЕРСОНАЖ</div>`;
-        switchMode('human'); // Загружаем данные из humanData (они у него основные)
-} else if (char.type === 'item') {
-        switcher.style.display = 'flex';
-        // Серая плашка вместо кнопок
-        switcher.innerHTML = `<div class="status-label" style="background: #333; border: 1px solid #555; color: #aaa;">ПРЕДМЕТ</div>`;
-        
-        // Загружаем данные (используем humanData как основную папку для предмета)
-        switchMode('human'); 
-    }
+// Функция отрисовки превью (левая панель)
+function renderPreview(char) {
+    if (!char) return;
+    previewImg.src = char.humanData?.main || "";
+    previewName.innerText = currentLang === 'ru' ? (char.name_ru || char.name) : char.name;
+    previewDesc.innerHTML = char.desc;
 }
 
-function switchMode(mode) {
-    if (!currentCharacter) return;
-    
-    const img = document.getElementById('modal-img');
-    const btnH = document.getElementById('btn-h');
-    const btnG = document.getElementById('btn-g');
-
-    featureContainer.innerHTML = ''; // Очистка старых признаков
-
-    const data = (mode === 'human') ? currentCharacter.humanData : currentCharacter.guestData;
-    img.src = data.main;
-
-    // Создаем карточки признаков
-    if (data.features) {
-        data.features.forEach(feat => {
-            const div = document.createElement('div');
-            div.className = 'feature-item';
-            div.innerHTML = `
-                <img src="${feat.img}" alt="${feat.name}">
-                <span>${feat.name}</span>
-            `;
-            featureContainer.appendChild(div);
-        });
-    }
-
-    if (mode === 'human') {
-        btnH.classList.add('active-human');
-        btnG.classList.remove('active-guest');
-    } else {
-        btnG.classList.add('active-guest');
-        btnH.classList.remove('active-human');
-    }
-}
-
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-const previewPopup = document.getElementById('image-preview-popup');
-
-// Функция для отслеживания движения мыши
-document.addEventListener('mouseover', (e) => {
-    const previewPopup = document.getElementById('image-preview-popup');
-    if (!previewPopup) return; 
-
-    if (e.target.tagName === 'IMG' && e.target.closest('.feature-item')) {
-        const src = e.target.src;
-        previewPopup.innerHTML = `<img src="${src}">`;
-        previewPopup.style.display = 'flex'; // Показываем как флекс-контейнер
-    }
-});
-
-document.addEventListener('mousemove', (e) => {
-    const previewPopup = document.getElementById('image-preview-popup');
-    // Если окно скрыто, ничего не считаем
-    if (!previewPopup || previewPopup.style.display === 'none') return;
-
-    const offset = 20;
-    const popupWidth = 350; // Наша ширина из CSS
-    const popupHeight = 350; // Наша высота из CSS
-
-    let x = e.clientX + offset;
-    let y = e.clientY + offset;
-
-    // Проверка краев экрана
-    if (x + popupWidth > window.innerWidth) {
-        x = e.clientX - popupWidth - offset;
-    }
-    if (y + popupHeight > window.innerHeight) {
-        y = e.clientY - popupHeight - offset;
-    }
-
-    // Прямое применение координат
-    previewPopup.style.left = x + 'px';
-    previewPopup.style.top = y + 'px';
-});
-
-document.addEventListener('mouseout', (e) => {
-    const previewPopup = document.getElementById('image-preview-popup');
-    if (!previewPopup) return;
-
-    if (e.target.tagName === 'IMG' && e.target.closest('.feature-item')) {
-        previewPopup.style.display = 'none';
-        previewPopup.innerHTML = '';
-    }
-});
-
+// --- УМНЫЙ ПОИСК (ИСПРАВЛЕННЫЙ) ---
 document.getElementById('char-search').addEventListener('input', function(e) {
     const query = e.target.value.toLowerCase().trim();
     const allCards = document.querySelectorAll('.char-card');
 
     allCards.forEach(card => {
-        const name = card.getAttribute('data-name').toLowerCase();
+        const nameEn = card.getAttribute('data-name-en') || "";
+        const nameRu = card.getAttribute('data-name-ru') || "";
+        const charId = card.getAttribute('data-id') || "";
 
-        if (query === "") {
-            // Если поиск пуст, возвращаем всё в нормальное состояние
-            card.classList.remove('not-found');
-        } else if (name.includes(query)) {
-            // Если совпало — подсвечиваем
-            card.classList.remove('not-found');
-        } else {
-            // Если не совпало — затухает
-            card.classList.add('not-found');
+        // Проверка внешних тегов из search_tags.js
+        let extra = "";
+        if (typeof extraSearchData !== 'undefined' && extraSearchData[charId]) {
+            extra = extraSearchData[charId].toLowerCase();
         }
+
+        const isMatch = query === "" || 
+                        nameEn.includes(query) || 
+                        nameRu.includes(query) || 
+                        extra.includes(query);
+
+        card.classList.toggle('not-found', !isMatch);
     });
 });
 
+// --- ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА (ИСПРАВЛЕННОЕ) ---
+function setLanguage(lang) {
+    currentLang = lang;
+    
+    // 1. Подсвечиваем активную кнопку
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`lang-${lang}`);
+    if (activeBtn) activeBtn.classList.add('active');
+    
+    // 2. Если открыта модалка — обновляем имя в ней мгновенно
+    if (document.getElementById('modal').style.display === 'flex' && currentCharacter) {
+        document.getElementById('modal-name').innerText = currentLang === 'ru' ? (currentCharacter.name_ru || currentCharacter.name) : currentCharacter.name;
+    }
+
+    // 3. Если мышь уже наведена на кого-то — обновляем имя в превью слева
+    if (window.lastHoveredChar) {
+        renderPreview(window.lastHoveredChar);
+    }
+
+}
+
+// --- МОДАЛЬНОЕ ОКНО ---
+function openModal(char) {
+    currentCharacter = char;
+    document.getElementById('modal').style.display = 'flex';
+    
+    document.getElementById('modal-name').innerText = currentLang === 'ru' ? (char.name_ru || char.name) : char.name;
+    document.getElementById('modal-info-text').innerHTML = char.desc;
+    
+    const switcher = document.getElementById('switcher-container');
+    
+    if (char.type === 'random') {
+        switcher.style.display = 'flex';
+        switcher.innerHTML = `
+            <button id="btn-h" class="toggle-btn" onclick="switchMode('human')">${currentLang === 'ru' ? 'Человек' : 'Human'}</button>
+            <button id="btn-g" class="toggle-btn" onclick="switchMode('guest')">${currentLang === 'ru' ? 'Гость' : 'Guest'}</button>
+        `;
+        switchMode('human'); 
+    } else {
+        switcher.style.display = 'flex';
+        const statusMap = {
+            'human': { class: 'status-human', ru: 'СТАТУС: ЧЕЛОВЕК', en: 'STATUS: HUMAN' },
+            'guest': { class: 'status-guest', ru: 'СТАТУС: ГОСТЬ', en: 'STATUS: GUEST' },
+            'story': { class: '', ru: 'СЮЖЕТНЫЙ ПЕРСОНАЖ', en: 'STORY CHARACTER', style: 'background:#4a90e2;color:white;padding:5px 15px;border-radius:4px;' },
+            'item': { class: '', ru: 'ПРЕДМЕТ', en: 'ITEM', style: 'background:#333;border:1px solid #555;color:#aaa;' }
+        };
+        const st = statusMap[char.type] || statusMap['human'];
+        const label = currentLang === 'ru' ? st.ru : st.en;
+        switcher.innerHTML = `<div class="status-label ${st.class}" style="${st.style || ''}">${label}</div>`;
+        switchMode('human');
+    }
+}
+
+function switchMode(mode) {
+    if (!currentCharacter) return;
+    const img = document.getElementById('modal-img');
+    const data = (mode === 'human') ? currentCharacter.humanData : currentCharacter.guestData;
+    if (img && data) img.src = data.main;
+    
+    featureContainer.innerHTML = ''; 
+    if (data && data.features) {
+        data.features.forEach(feat => {
+            const div = document.createElement('div');
+            div.className = 'feature-item';
+            div.innerHTML = `<img src="${feat.img}"><span>${feat.name}</span>`;
+            featureContainer.appendChild(div);
+        });
+    }
+
+    const btnH = document.getElementById('btn-h');
+    const btnG = document.getElementById('btn-g');
+    if (btnH && btnG) {
+        btnH.classList.toggle('active-human', mode === 'human');
+        btnG.classList.toggle('active-guest', mode === 'guest');
+    }
+}
+
+function closeModal() { document.getElementById('modal').style.display = 'none'; }
+
+// --- ПРЕВЬЮ ПРИЗНАКОВ (POPUP) ---
+document.addEventListener('mouseover', (e) => {
+    if (previewPopup && e.target.tagName === 'IMG' && e.target.closest('.feature-item')) {
+        previewPopup.innerHTML = `<img src="${e.target.src}">`;
+        previewPopup.style.display = 'flex';
+    }
+});
+document.addEventListener('mousemove', (e) => {
+    if (!previewPopup || previewPopup.style.display === 'none') return;
+    let x = e.clientX + 20, y = e.clientY + 20;
+    if (x + 350 > window.innerWidth) x = e.clientX - 370;
+    if (y + 350 > window.innerHeight) y = e.clientY - 370;
+    previewPopup.style.left = x + 'px';
+    previewPopup.style.top = y + 'px';
+});
+document.addEventListener('mouseout', (e) => {
+    if (previewPopup && e.target.tagName === 'IMG') previewPopup.style.display = 'none';
+});
+
+// --- САЙДБАР FLIP ---
 const sidebar = document.getElementById('sidebar');
 const toggleBtn = document.getElementById('toggle-sidebar');
-
-toggleBtn.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.char-card');
-    
-    // 1. ЗАПОМИНАЕМ (First): где карточки сейчас
-    const firstPositions = Array.from(cards).map(card => card.getBoundingClientRect());
-
-    // 2. МЕНЯЕМ СОСТОЯНИЕ: закрываем/открываем сайдбар
-    sidebar.classList.toggle('collapsed');
-
-    // Даем браузеру мгновение пересчитать сетку
-    requestAnimationFrame(() => {
-        cards.forEach((card, i) => {
-            // 3. СМОТРИМ (Last): где карточки оказались теперь
-            const lastPosition = card.getBoundingClientRect();
-            
-            // Вычисляем разницу
-            const dx = firstPositions[i].left - lastPosition.left;
-            const dy = firstPositions[i].top - lastPosition.top;
-
-            // 4. ИНВЕРСИЯ (Invert): мгновенно возвращаем их назад через transform
-            card.style.transition = 'none';
-            card.style.transform = `translate(${dx}px, ${dy}px)`;
-
-            // 5. ИГРАЕМ (Play): плавно убираем transform, и они летят на свои места
-            requestAnimationFrame(() => {
-                card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-                card.style.transform = 'none';
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.char-card');
+        const firstPositions = Array.from(cards).map(card => card.getBoundingClientRect());
+        sidebar.classList.toggle('collapsed');
+        requestAnimationFrame(() => {
+            cards.forEach((card, i) => {
+                const lastPos = card.getBoundingClientRect();
+                card.style.transition = 'none';
+                card.style.transform = `translate(${firstPositions[i].left - lastPos.left}px, ${firstPositions[i].top - lastPos.top}px)`;
+                requestAnimationFrame(() => {
+                    card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'none';
+                });
             });
         });
     });
-});
-
-function openInfoModal() {
-    const modal = document.getElementById('info-modal');
-    modal.style.display = 'flex';
 }
 
-function closeInfoModal() {
-    const modal = document.getElementById('info-modal');
-    modal.style.display = 'none';
-}
+function openInfoModal() { document.getElementById('info-modal').style.display = 'flex'; }
+function closeInfoModal() { document.getElementById('info-modal').style.display = 'none'; }
 
-// Закрытие по клику вне окна уже встроено в HTML через onclick="closeInfoModal(event)"
-
+// ЗАПУСК
 init();
